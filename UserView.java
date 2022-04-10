@@ -17,8 +17,8 @@ public class UserView {
 	  public static boolean menu() {
 	    System.out.println("Select an option below, or enter '0' to quit the program:\n"
 	    + "[1] find the shortest path between two bus stops \n"
-	    + "[2] find information regarding a specific stop \n"
-	    + "[3] find all trips with a desired arrival time \n"
+	    + "[2] search to find information about specific stop \n"
+	    + "[3] find all trips based on arrival time \n"
 	    + "[0] exit program \n"
 	    );
 
@@ -55,7 +55,7 @@ public class UserView {
 	            stopB = input.nextInt();
 	          }
 	          else {
-	            System.out.println("Invalid stop number.");
+	            System.out.println("Invalid stop number. Please try again");
 	          }
 	          findShortestPath(stopA, stopB);
 	        }
@@ -70,7 +70,6 @@ public class UserView {
 	        // Option 3: Finding all trips with a desired arrival time //
 	        else if (choice == 3) {
 	          System.out.println("Enter your arrival time [hh:mm:ss]: ");
-	          String timeIn = input.nextLine();
 	          String item = input.next();
 	          findArrivalTime(item);
 			
@@ -92,7 +91,7 @@ public class UserView {
 
 	  // Implementation of findStopInformation class
 	  private static void findStopInformation(String stopName) {
-	    SearchTree TST = new SearchTree("/Users/alannafusciardiwallace/Downloads/input-files/stops.txt");
+		SearchTree TST = new SearchTree("/Users/alannafusciardiwallace/Downloads/input-files/stops.txt");
 	    Iterable<String> validStops = TST.keysWithPrefix(stopName);
 
 	    if(validStops != null) {
@@ -102,12 +101,10 @@ public class UserView {
 	    } else {
 	        System.out.println("No matching stops were found");
 	    }
-	  }
 
 
 	  // Implementation of findArrivalTime class
 	  private static void findArrivalTime(String arrivalTime) {
-	    ArrivalTimeSearch SAT = new ArrivalTimeSearch();
 	    ArrayList<String> arrTime = ArrivalTimeSearch.parseFile(arrivalTime);
 	    if (!arrTime.isEmpty()) {
 	        for (int i = 0; i < arrTime.size(); i++) {
