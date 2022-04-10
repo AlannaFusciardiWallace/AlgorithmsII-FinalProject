@@ -2,9 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+<<<<<<< HEAD
 		},
 		{
 			"path": "../../../Downloads/input-files"
+=======
+>>>>>>> 7c83411e3d0dfd17699734ac9e820761620914ad
 		}
 	],
 	"settings": {}
