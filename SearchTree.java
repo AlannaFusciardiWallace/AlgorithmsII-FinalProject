@@ -168,4 +168,8 @@ public String printStopSingleLine() {
     return stopName + " " + stopId + " " + stopDesc;
 }
 
+public String printStopLine() {
+    return null;
+}
+
 }

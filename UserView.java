@@ -73,6 +73,7 @@ public class UserView {
 	          String timeIn = input.nextLine();
 	          String item = input.next();
 	          findArrivalTime(item);
+			
 	        }
 	        else {
 	          System.out.println("Invalid input provided.");
@@ -84,14 +85,14 @@ public class UserView {
 
 	  // Implementation of findShortestPath class
 	  private static void findShortestPath(int stopA, int stopB) {
-	    ShortestPath shortest = new ShortestPath("./inputs/stop_times.txt", "./inputs/transfers.txt");
+	    ShortestPath shortest = new ShortestPath("/Users/alannafusciardiwallace/Downloads/input-files/stop_times.txt", "/Users/alannafusciardiwallace/Downloads/input-files/transfers.txt");
 	    String shortestDist = shortest.findShortDistance(stopA, stopB);
 	    System.out.println(shortestDist.toString());
 	  }
 
 	  // Implementation of findStopInformation class
 	  private static void findStopInformation(String stopName) {
-	    SearchTree TST = new SearchTree("./inputs/stops.txt");
+	    SearchTree TST = new SearchTree("/Users/alannafusciardiwallace/Downloads/input-files/stops.txt");
 	    Iterable<String> validStops = TST.keysWithPrefix(stopName);
 
 	    if(validStops != null) {
@@ -107,7 +108,7 @@ public class UserView {
 	  // Implementation of findArrivalTime class
 	  private static void findArrivalTime(String arrivalTime) {
 	    ArrivalTimeSearch SAT = new ArrivalTimeSearch();
-	    ArrayList<String> arrTime = SAT.parseFile(arrivalTime);
+	    ArrayList<String> arrTime = ArrivalTimeSearch.parseFile(arrivalTime);
 	    if (!arrTime.isEmpty()) {
 	        for (int i = 0; i < arrTime.size(); i++) {
 	          System.out.println(arrTime.get(i));

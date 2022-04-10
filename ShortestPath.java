@@ -57,7 +57,7 @@ public class ShortestPath {
     	}
     	
     	if(disty[y] == Double.POSITIVE_INFINITY) {
-    		return "This route does not exist.";
+    		return "Route not found";
     	}
     	
     	int u = x;
