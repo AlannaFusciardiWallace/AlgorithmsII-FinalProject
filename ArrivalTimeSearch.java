@@ -18,7 +18,7 @@ public class ArrivalTimeSearch {
 		try {
 			String line;
 			
-			BufferedReader br = new BufferedReader(new FileReader("./inputs/stop_times.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("/Users/alannafusciardiwallace/Downloads/input-files/stop_times.txt"));
 			br.readLine();
 			while ((line = br.readLine()) != null) {
 				if (!line.isEmpty()) {
