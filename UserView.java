@@ -91,17 +91,9 @@ public class UserView {
 
 	  // Implementation of findStopInformation class
 	  private static void findStopInformation(String stopName) {
-		SearchTree TST = new SearchTree("/Users/alannafusciardiwallace/Downloads/input-files/stops.txt");
-	    Iterable<String> validStops = TST.keysWithPrefix(stopName);
-
-	    if(validStops != null) {
-	        for(String key : validStops){
-	            System.out.println("" + TST.get(key).printStopLine());
-	        }
-	    } else {
-	        System.out.println("No matching stops were found");
-	    }
-
+				String name = input.nextLine();
+				SearchTree.functionality(name);
+	}
 
 	  // Implementation of findArrivalTime class
 	  private static void findArrivalTime(String arrivalTime) {
